@@ -1,0 +1,38 @@
+﻿@page
+@model InscricaoApp.Web.Pages.Participantes.IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Participantes</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Participantes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th>Telefone</th>
+                    <th>Pacote</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var participante in Model.Participantes)
+                {
+                    <tr>
+                        <td>@participante.Nome</td>
+                        <td>@participante.DataNascimento.ToShortDateString()</td>
+                        <td>@participante.Telefone</td>
+                        <td>@participante.Pacote.Descricao</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

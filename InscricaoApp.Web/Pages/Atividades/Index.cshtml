@@ -1,0 +1,29 @@
+﻿@page
+@model InscricaoApp.Web.Pages.Atividades.IndexModel
+
+<h1>Atividades</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var atividade in Model.Atividades)
+        {
+            <tr>
+                <td>@atividade.DescAtv</td>
+                <td>@atividade.Preco</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@atividade.Id">Editar</a> |
+                    <a asp-page="./Details" asp-route-id="@atividade.Id">Detalhes</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./Create" class="btn btn-primary">Criar Nova Atividade</a>

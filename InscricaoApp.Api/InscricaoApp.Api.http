@@ -1,0 +1,6 @@
+@InscricaoApp.Api_HostAddress = https://localhost:7015
+
+GET {{InscricaoApp.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
